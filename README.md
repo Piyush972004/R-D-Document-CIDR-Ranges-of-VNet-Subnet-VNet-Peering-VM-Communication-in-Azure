@@ -1,0 +1,1 @@
+# R-D-Document-CIDR-Ranges-of-VNet-Subnet-VNet-Peering-VM-Communication-in-Azure
