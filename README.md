@@ -34,6 +34,8 @@ CIDR (Classless Inter-Domain Routing) defines the IP address space using <IP add
 - Minimal: /32 – single IP address (very fine-grained control)
 ---
 
+
+
 ---
 ## 🧱 Subnets
 A Subnet is a segment of a VNet's IP space that organizes and secures resources.
@@ -58,6 +60,7 @@ Features & Associations:
 
 - Delegation: Allow specific services to manage subnet resources.
 
+
 ## 🔗 VNet Peering
 VNet Peering connects two or more VNets, allowing them to communicate over the Azure backbone network—bypassing public internet.
 
@@ -70,6 +73,8 @@ VNet Peering connects two or more VNets, allowing them to communicate over the A
 
 - No downtime during peering setup
 
+
+
 ## 🧩 Types of VNet Peering
 - Type	                         Description
 - Intra-Region Peering	         Peers VNets within the same Azure region
@@ -79,6 +84,9 @@ VNet Peering connects two or more VNets, allowing them to communicate over the A
 - Remote Gateway Peering	       Connects on-premise networks to peered VNets
 - Transitive Peering	           Hub-and-spoke network setup
 - Subnet-Level Peering	         Peer only selected subnets (granular control)
+
+
+
 
 ## ⚙️ Prerequisites for Creating a VNet
 - To create a VNet in Azure:
@@ -99,7 +107,9 @@ VNet Peering connects two or more VNets, allowing them to communicate over the A
 
 
 
-##  🌐 Azure Virtual Network Peering Setup (Linux ↔ Windows VM)
+
+
+##  🌐 Azure Virtual Network Peering Setup (Linux ↔ Windows VM)   (Project Implementation)
 
 This project demonstrates how to:
 - Create VNets and Subnets with custom CIDR ranges
@@ -108,6 +118,8 @@ This project demonstrates how to:
 - Establish VNet Peering between the two VNets
 - Verify connectivity via `ping` between VMs
 
+
+
 ## 📌 CIDR Ranges
 
 | VNet   | CIDR Range   | Subnet        |
@@ -115,12 +127,16 @@ This project demonstrates how to:
 | vnet1  | 10.1.0.0/16  | default       |
 | vnet2  | 10.2.0.0/16  | subnet2       |
 
+
+
 ## 🔧 VM Configuration
 
 | VM       | OS                       | Size             | Username | Auth Type |
 |----------|--------------------------|------------------|----------|-----------|
 | LinuxVM  | Ubuntu 22.04             | B2as v2          | Piyush   | SSH Key   |
 | WinVM    | Windows Server 2019      | B2as v2          | Piyush   | ********  |
+
+
 
 ## 🔐 NSG Rules
 
@@ -131,6 +147,8 @@ This project demonstrates how to:
   - Allow RDP (Port 3389)
   - Allow ICMP (Ping)
 
+
+
 ## 🔗 VNet Peering
 
 - Peering from `vnet1` to `vnet2` and vice versa
@@ -138,8 +156,49 @@ This project demonstrates how to:
   - Allow traffic between VNets
   - Allow forwarded traffic
 
+
+
 ## ✅ Connectivity Test
 
 Successfully tested:
 ```bash
 ping 10.1.0.4  # From LinuxVM to WinVM
+
+
+```
+
+
+## Live Demo
+
+
+
+##  1. Virtual Network (VNet) Creation
+
+![Virtual Network (VNet) Creation](Screenshots/Screenshot%202025-06-19%20202039.png)
+![Virtual Network (VNet) Creation](Screenshots/Screenshot%202025-06-19%20202125.png)
+![Virtual Network (VNet) Creation](Screenshots/Screenshot%202025-06-19%20202137.png)
+
+ ## 2. Subnet Configuration
+![ 2. Subnet Configuration](Screenshots/Screenshot%202025-06-19%20202218.png)
+![ 2. Subnet Configuration](Screenshots/Screenshot%202025-06-19%20202230.png)
+
+## 3. VM Overview (Linux & Windows)
+![3. VM Overview (Linux & Windows)](Screenshots/Screenshot%202025-06-19%20202251.png)
+![Virtual Network (VNet) Creation](Screenshots/Screenshot%202025-06-19%20202310.png)
+![Virtual Network (VNet) Creation](Screenshots/Screenshot%202025-06-19%20202318.png)
+
+##  4. NSG Configuration
+![ 4. NSG Configuration](Screenshots/Screenshot%202025-06-19%20202349.png)
+![ 4. NSG Configuration](Screenshots/Screenshot%202025-06-19%20202401.png)
+![ 4. NSG Configuration](Screenshots/Screenshot%202025-06-19%20202412.png)
+
+
+## 5. VNet Peering Setup
+![5. VNet Peering Setup](Screenshots/Screenshot%202025-06-19%20202440.png)
+![5. VNet Peering Setup](Screenshots/Screenshot%202025-06-19%20202450.png)
+![5. VNet Peering Setup](Screenshots/Screenshot%202025-06-19%20202509.png)
+
+
+## 6. SSH into Linux VM
+![6. SSH into Linux VM](Screenshots/Screenshot%202025-06-19%20202540.png)
+![6. SSH into Linux VM](Screenshots/Screenshot%202025-06-19%20202558.png)
