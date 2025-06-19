@@ -120,7 +120,7 @@ This project demonstrates how to:
 | VM       | OS                       | Size             | Username | Auth Type |
 |----------|--------------------------|------------------|----------|-----------|
 | LinuxVM  | Ubuntu 22.04             | B2as v2          | Piyush   | SSH Key   |
-| WinVM    | Windows Server 2019      | B2as v2          | azureuser| Password  |
+| WinVM    | Windows Server 2019      | B2as v2          | Piyush   | ********  |
 
 ## 🔐 NSG Rules
 
